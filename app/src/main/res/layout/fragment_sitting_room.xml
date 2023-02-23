@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.monitor.scene.SittingRoomFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_scene_sitting_room"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabPaddingStart="30dp"
+        app:tabGravity="fill"
+        app:tabMinWidth="50dp"
+        app:tabPaddingEnd="30dp"
+        app:tabIndicator="@drawable/indicator"
+        app:tabTextAppearance="@style/TabLayoutTextStyle"
+        android:background="@android:color/transparent"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="#FF878787" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_scene_sitting_room"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_margin="30dp" />
+
+</LinearLayout>

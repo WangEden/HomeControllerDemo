@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Demo</string>
+
+    <string name="tab_bar_ctrl">控制</string>
+    <string name="tab_bar_data">数据</string>
+    <string name="tab_bar_me">我</string>
+
+    <string name="control_welcome">Hi，用户名</string>
+
+    <string name="scene_bedroom">卧室</string>
+    <string name="scene_kitchen">厨房</string>
+    <string name="scene_sitting_room">客厅</string>
+
+    <string name="state_normal">一切正常</string>
+    <string name="state_awful">出现异常</string>
+    <string name="state_fire">可能出现火灾</string>
+
+    <string name="temperature_zero">0°</string>
+    <string name="temperature_ten">10°</string>
+    <string name="temperature_twenty">20°</string>
+    <string name="temperature_thirty">30°</string>
+    <string name="temperature_forty">40°</string>
+
+    <string name="control_current_temperature">当前室温</string>
+    <string name="control_current_temperature_unit">°C</string>
+    <string name="control_switch_description">控制开关</string>
+    <string name="control_switch_power">电闸</string>
+    <string name="control_switch_burner">燃气阀</string>
+    <string name="monitor_scene_selection">场景选择</string>
+
+    <string name="scene_data_history_data">历史数据</string>
+    <string name="scene_data_statistic_by_day">按天统计</string>
+    <string name="scene_data_statistic_by_week">按周统计</string>
+    <string name="scene_data_statistic_by_month">按月统计</string>
+
+    <string name="time_zero_zero">00:00</string>
+    <string name="time_six_zero">06:00</string>
+    <string name="time_twelve_zero">12:00</string>
+    <string name="time_eighteen_zero">18:00</string>
+    <string name="time_twenty_four_zero">24:00</string>
+
+    <string name="scene_data_temperature_sample1">即时温度</string>
+    <string name="scene_data_temperature_sample2">平均温度</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bindDeviceHint">请输入设备编号...</string>
+
+</resources>

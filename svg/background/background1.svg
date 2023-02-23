@@ -1,0 +1,14 @@
+<svg width="427.000000" height="841.000000" viewBox="0 0 427 841" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<path d="M0 0L427 0L427 841L0 841L0 0Z" fill-rule="evenodd" fill="url(#paint_radial_6_503_0)"/>
+	<defs>
+		<radialGradient id="paint_radial_6_503_0" cx="0.000000" cy="0.000000" r="1.000000" gradientUnits="userSpaceOnUse" gradientTransform="translate(213.498 365.905) rotate(91.2989) scale(485.22 1066.9)">
+			<stop stop-color="#E1E4F8"/>
+			<stop offset="0.430512" stop-color="#EBEDFF"/>
+			<stop offset="0.935873" stop-color="#FFFFFF"/>
+			<stop offset="0.982454" stop-color="#EBEDFF"/>
+		</radialGradient>
+	</defs>
+</svg>

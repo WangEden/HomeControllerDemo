@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="@drawable/ic_scene_data_panel_background"
+    tools:context=".fragment.monitor.scene.sitting_room.TemperatureFragment">
+
+    <TextView
+        android:id="@+id/tv_scene_data_history_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/scene_data_history_data"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!--    textview -> Spinner  -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sitting_room_data_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tv_scene_data_history_data"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scene_data_history_data">
+
+        <com.example.demo.diy_view.CustomSpinner
+            android:id="@+id/spinner_data_way_selector"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_data_statistic_way"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_40"
+            app:layout_constraintBottom_toBottomOf="@+id/sitting_room_data_selector"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_data_way_selector"
+            app:layout_constraintTop_toTopOf="@+id/sitting_room_data_selector" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    <TextView-->
+<!--        android:id="@+id/tv_scene_data_statistic_way"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingBottom="20dp"-->
+<!--        android:text="@string/scene_data_statistic_by_day"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.2"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_scene_data_history_data"-->
+<!--        app:layout_constraintVertical_bias="0.15" />-->
+    <!--                           -->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_scene_temperature_horizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"
+        app:layout_constraintTop_toBottomOf="@+id/sitting_room_data_selector" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_scene_temperature_vertical1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_scene_temperature_horizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <FrameLayout
+        android:layout_width="320dp"
+        android:layout_height="240dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_scene_temperature_horizontal2"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_scene_temperature_vertical1"
+        app:layout_constraintStart_toStartOf="@+id/sitting_room_data_selector"
+        app:layout_constraintTop_toTopOf="@+id/guideline_scene_temperature_horizontal1" >
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart_temperature_sitting_room"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/img_scene_data_grid_line1"-->
+    <!--        android:layout_width="250dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:paddingTop="18dp"-->
+    <!--        android:paddingBottom="18dp"-->
+    <!--        android:src="@drawable/ic_scene_data_grid_line"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/guideline_scene_temperature_horizontal1"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_scene_data_statistic_way"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/guideline_scene_temperature_horizontal1" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/img_scene_data_grid_line2"-->
+    <!--        android:layout_width="250dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:paddingTop="18dp"-->
+    <!--        android:paddingBottom="18dp"-->
+    <!--        android:src="@drawable/ic_scene_data_grid_line"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_scene_data_statistic_way"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/img_scene_data_grid_line1" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/img_scene_data_grid_line3"-->
+    <!--        android:layout_width="250dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:paddingTop="18dp"-->
+    <!--        android:paddingBottom="18dp"-->
+    <!--        android:src="@drawable/ic_scene_data_grid_line"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_scene_data_statistic_way"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/img_scene_data_grid_line2" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/img_scene_data_grid_line4"-->
+    <!--        android:layout_width="250dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:paddingTop="18dp"-->
+    <!--        android:paddingBottom="18dp"-->
+    <!--        android:src="@drawable/ic_scene_data_grid_line"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_scene_data_statistic_way"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/img_scene_data_grid_line3" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/img_scene_data_grid_line5"-->
+    <!--        android:layout_width="250dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:paddingTop="18dp"-->
+    <!--        android:src="@drawable/ic_scene_data_grid_line"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tv_scene_data_statistic_way"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/img_scene_data_grid_line4" />-->
+
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:text="@string/temperature_forty"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/img_scene_data_grid_line1"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/img_scene_data_grid_line1" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:text="@string/temperature_thirty"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/img_scene_data_grid_line2"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/img_scene_data_grid_line2" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:text="@string/temperature_twenty"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/img_scene_data_grid_line3"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/img_scene_data_grid_line3" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:text="@string/temperature_ten"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/img_scene_data_grid_line4"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/img_scene_data_grid_line4" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:text="@string/temperature_zero"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/guideline_scene_temperature_horizontal2"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/guideline_scene_temperature_vertical1"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/guideline_scene_temperature_horizontal2" />-->
+
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/scene_data_grid_scale_x"-->
+    <!--        android:layout_width="220dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/tv_scene_data_statistic_way"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/guideline_scene_temperature_horizontal2">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_scene_data_grid_indicator" />-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="@string/time_zero_zero" />-->
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_scene_data_grid_indicator" />-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="@string/time_six_zero" />-->
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_scene_data_grid_indicator" />-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="@string/time_twelve_zero" />-->
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_scene_data_grid_indicator" />-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="@string/time_eighteen_zero" />-->
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:orientation="vertical">-->
+
+    <!--            <ImageView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:src="@drawable/ic_scene_data_grid_indicator" />-->
+
+    <!--            <TextView-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="@string/time_twenty_four_zero" />-->
+    <!--        </LinearLayout>-->
+
+    <!--    </LinearLayout>-->
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/img_scene_data_sample_sign1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:src="@drawable/ic_scene_data_sample_sign_line1"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/tv_scene_data_statistic_way"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/scene_data_grid_scale_x" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_scene_data_sample1"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:layout_marginEnd="5dp"-->
+    <!--        android:text="@string/scene_data_temperature_sample1"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/img_scene_data_sample_sign1"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/img_scene_data_sample_sign1"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/img_scene_data_sample_sign1" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/img_scene_data_sample_sign2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="15dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:src="@drawable/ic_scene_data_sample_sign_line2"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tv_scene_data_sample1"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/scene_data_grid_scale_x" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_scene_data_sample2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="5dp"-->
+    <!--        android:layout_marginEnd="5dp"-->
+    <!--        android:text="@string/scene_data_temperature_sample2"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/img_scene_data_sample_sign2"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/img_scene_data_sample_sign2"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/img_scene_data_sample_sign2" />-->
+
+    <!--    test_line will be deleted some day in the future    -->
+    <!--    <ImageView-->
+    <!--        android:layout_width="200dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:src="@drawable/ic_test_line"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/img_scene_data_grid_line3"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/img_scene_data_grid_line3"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/img_scene_data_grid_line3"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/img_scene_data_grid_line3" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GradientCircleProgress">
+        <!--   进度条宽度     -->
+        <attr name="progress_width" format="dimension" />
+        <!--   进度条颜色     -->
+        <attr name="progress_color" format="color" />
+        <attr name="progress_start_color" format="color" />
+        <attr name="progress_end_color" format="color" />
+        <!--   进度条背景颜色     -->
+        <attr name="progress_bg_color" format="color" />
+        <!--   进度     -->
+        <attr name="progress" format="integer" />
+        <!--   文字大小     -->
+        <attr name="circle_text_size" format="dimension" />
+        <!--   文字颜色     -->
+        <attr name="circle_text_color" format="color" />
+        <!--   是否显示居中文字     -->
+        <attr name="isVisibleText" format="boolean" />
+        <!--   进度条起点位置     -->
+        <attr name="location_start" format="enum">
+            <enum name="left" value="1" />
+            <enum name="top" value="2" />
+            <enum name="right" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NiceImageView">
+        <attr name="is_circle" format="boolean" />
+        <attr name="is_cover_src" format="boolean" />
+        <attr name="corner_radius" format="dimension" />
+        <attr name="corner_top_left_radius" format="dimension" />
+        <attr name="corner_top_right_radius" format="dimension" />
+        <attr name="corner_bottom_left_radius" format="dimension" />
+        <attr name="corner_bottom_right_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="inner_border_width" format="dimension" />
+        <attr name="inner_border_color" format="color" />
+        <attr name="mask_color" format="color" />
+    </declare-styleable>
+</resources>

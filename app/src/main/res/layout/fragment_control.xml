@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_background1"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    打招呼 和 切换场景-->
+    <TextView
+        android:id="@+id/tv_control_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:text="@string/control_welcome"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/control_scene_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tv_control_welcome"
+        app:layout_constraintTop_toBottomOf="@+id/tv_control_welcome">
+
+        <com.example.demo.diy_view.CustomSpinner
+            android:id="@+id/spinner_control_scene_selector"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <TextView-->
+        <!--                    android:id="@+id/tv_control_scene"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="@string/scene_bedroom"-->
+        <!--                    android:textColor="@color/black"-->
+        <!--                    android:textSize="24sp"-->
+        <!--                    android:textStyle="bold"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+        <ImageView
+            android:id="@+id/img_control_scene_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24_black"
+            app:layout_constraintBottom_toBottomOf="@+id/control_scene_selector"
+            app:layout_constraintEnd_toEndOf="@+id/spinner_control_scene_selector"
+            app:layout_constraintTop_toTopOf="@+id/control_scene_selector" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv_control_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/state_normal"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/control_scene_selector"
+        app:layout_constraintTop_toBottomOf="@id/control_scene_selector" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.16" />
+
+    <!--    仪表盘     -->
+
+    <ImageView
+        android:id="@+id/img_dashboard"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="48dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ellipse_dashboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline6" />
+
+    <ImageView
+        android:id="@+id/img_scale"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ellipse_scale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline6" />
+
+
+    <!--    环形进度条   -->
+    <com.example.demo.diy_view.GradientCircleProgress
+        android:id="@+id/circleProgress"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="15dp"
+        app:circle_text_color="#f00"
+        app:circle_text_size="30sp"
+        app:isVisibleText="true"
+        app:layout_constraintBottom_toBottomOf="@+id/img_dashboard"
+        app:layout_constraintEnd_toEndOf="@+id/img_dashboard"
+        app:layout_constraintStart_toStartOf="@+id/img_dashboard"
+        app:layout_constraintTop_toTopOf="@+id/img_dashboard"
+        app:layout_constraintVertical_bias="0.09"
+        app:location_start="bottom"
+        app:progress="50"
+        app:progress_color="#F25656"
+        app:progress_bg_color="#00000000"
+        app:progress_width="5dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <TextView
+        android:id="@+id/tv_control_temperature_scale_ten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:text="@string/temperature_ten"
+        android:textColor="@color/control_dashboard_final_temperature"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:layout_constraintEnd_toStartOf="@id/img_scale" />
+
+
+    <TextView
+        android:id="@+id/tv_control_temperature_scale_thirty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="@string/temperature_thirty"
+        android:textColor="@color/control_dashboard_final_temperature"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:layout_constraintStart_toEndOf="@id/img_scale" />
+
+    <TextView
+        android:id="@+id/tv_control_temperature_scale_twenty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/temperature_twenty"
+        android:textColor="@color/control_dashboard_final_temperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img_scale" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <TextView
+        android:id="@+id/tv_control_current_temp_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/control_current_temperature"
+        app:layout_constraintEnd_toEndOf="@id/tv_control_temperature_scale_thirty"
+        app:layout_constraintStart_toStartOf="@id/tv_control_temperature_scale_ten"
+        app:layout_constraintTop_toBottomOf="@id/guideline4" />
+
+    <TextView
+        android:id="@+id/tv_control_current_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_control_current_temp_sign" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8sp"
+        android:text="@string/control_current_temperature_unit"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_control_current_temperature"
+        app:layout_constraintStart_toEndOf="@+id/tv_control_current_temperature" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/control_switch_description"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="@id/tv_control_welcome" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/img_switch_container1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:src="@drawable/ic_control_switch_container1"
+        app:layout_constraintEnd_toStartOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guideline3" />
+
+    <Switch
+        android:id="@+id/sw_power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:checked="true"
+        android:minHeight="48dp"
+        android:thumb="@drawable/thumb"
+        android:track="@drawable/track"
+        app:layout_constraintEnd_toEndOf="@id/img_switch_container1"
+        app:layout_constraintTop_toTopOf="@+id/img_switch_container1"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:text="@string/control_switch_power"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/img_switch_container1"
+        app:layout_constraintStart_toStartOf="@id/img_switch_container1" />
+
+    <ImageView
+        android:id="@+id/img_switch_container2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:src="@drawable/ic_control_switch_container1"
+        app:layout_constraintStart_toEndOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guideline3" />
+
+    <Switch
+        android:id="@+id/sw_burner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:minHeight="48dp"
+        android:thumb="@drawable/thumb"
+        android:track="@drawable/track"
+        app:layout_constraintEnd_toEndOf="@id/img_switch_container2"
+        app:layout_constraintTop_toTopOf="@+id/img_switch_container2"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:text="@string/control_switch_burner"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/img_switch_container2"
+        app:layout_constraintStart_toStartOf="@id/img_switch_container2" />
+
+    <FrameLayout
+        android:id="@+id/pop_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
